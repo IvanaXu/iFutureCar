@@ -174,7 +174,7 @@ class MatrixEnv(ABC, gym.Env):
             前轮转角范围：[-PI/4, PI/4]
 
         """
-        return dict(), 0.0, False, dict()
+        return dict(), 0.0, True, dict()
 
     def centers_by_lane_id(self, lane_id: str) -> List[Tuple[float, float]]:
         assert self.matrix_env_, "MatrixEnv should not be none."
