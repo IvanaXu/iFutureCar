@@ -174,6 +174,8 @@ class MatrixEnv(ABC, gym.Env):
             前轮转角范围：[-PI/4, PI/4]
 
         """
+        print(actions)
+
         import random
         rand = random.random() < 0.618
         observation, info = {"player": {}}, dict()
