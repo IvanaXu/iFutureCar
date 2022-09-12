@@ -93,15 +93,7 @@ class MatrixEnv(ABC, gym.Env):
         Returns:
             Dict:  Obsevation 定义见 step 函数
         """
-        import random
-        rand = random.random() < 0.618
-
-        observation, info = {"player": {}}, {"TotalExpStepRemain": 0, "MaxStep": 0, "CurrentStep": 0}
-        observation["player"]["status"] = np.random.randint(-1e4, 1e4, size=(9,))
-        observation["player"]["property"] = np.random.randint(-1e4, 1e4, size=(9,))
-        observation["player"]["target"] = np.random.randint(-1e4, 1e4, size=(8,))
-        observation["npcs"] = np.random.randint(0, 1, size=(32, 11))
-        return observation
+        return dict()
 
     @abstractmethod
     def step(self, actions: np.ndarray) -> Observations:
@@ -182,16 +174,7 @@ class MatrixEnv(ABC, gym.Env):
             前轮转角范围：[-PI/4, PI/4]
 
         """
-        import random
-        rand = random.random() < 0.618
-
-        observation, info = {"player": {}}, {"TotalExpStepRemain": 0, "MaxStep": 0, "CurrentStep": 0}
-        observation["player"]["status"] = np.random.randint(-1e4, 1e4, size=(9,))
-        observation["player"]["property"] = np.random.randint(-1e4, 1e4, size=(9,))
-        observation["player"]["target"] = np.random.randint(-1e4, 1e4, size=(8,))
-        observation["npcs"] = np.random.randint(0, 1, size=(32, 11))
-
-        return observation, 0.001 if rand else 0.618, False if rand else True, info
+        return dict(), 0.0, False, dict()
 
     def centers_by_lane_id(self, lane_id: str) -> List[Tuple[float, float]]:
         assert self.matrix_env_, "MatrixEnv should not be none."
