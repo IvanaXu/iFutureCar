@@ -93,7 +93,15 @@ class MatrixEnv(ABC, gym.Env):
         Returns:
             Dict:  Obsevation 定义见 step 函数
         """
-        return dict()
+        import random
+        rand = random.random() < 0.618
+
+        observation, info = {"player": {}}, {"TotalExpStepRemain": 0, "MaxStep": 0, "CurrentStep": 0}
+        observation["player"]["status"] = np.random.randint(-1e4, 1e4, size=(9,))
+        observation["player"]["property"] = np.random.randint(-1e4, 1e4, size=(9,))
+        observation["player"]["target"] = np.random.randint(-1e4, 1e4, size=(8,))
+        observation["npcs"] = np.random.randint(0, 1, size=(32, 11))
+        return observation
 
     @abstractmethod
     def step(self, actions: np.ndarray) -> Observations:
@@ -174,8 +182,6 @@ class MatrixEnv(ABC, gym.Env):
             前轮转角范围：[-PI/4, PI/4]
 
         """
-        print(actions)
-
         import random
         rand = random.random() < 0.618
 
