@@ -178,7 +178,8 @@ class MatrixEnv(ABC, gym.Env):
 
         import random
         rand = random.random() < 0.618
-        observation, info = {"player": {}}, dict()
+
+        observation, info = {"player": {}}, {"TotalExpStepRemain": 0, "MaxStep": 0, "CurrentStep": 0}
         observation["player"]["status"] = np.random.randint(-1e4, 1e4, size=(9,))
         observation["player"]["property"] = np.random.randint(-1e4, 1e4, size=(9,))
         observation["player"]["target"] = np.random.randint(-1e4, 1e4, size=(8,))
