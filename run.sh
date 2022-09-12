@@ -6,6 +6,7 @@ then
 elif [ "$1" = "rcmd" ]
 then
     echo "rcmd"
+    docker rm -f matrix_demo
     docker run -dit --name matrix_demo registry.cn-shanghai.aliyuncs.com/tianchi/matrix:matrix_demo bash
 
     docker cp run.sh matrix_demo:/workspace/
