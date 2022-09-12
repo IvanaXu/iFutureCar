@@ -19,7 +19,7 @@ def run(worker_index):
         env = gym.make("MatrixEnv-v1", scenarios=Scenarios.INFERENCE)
         obs = env.reset()
         while True:
-            observation, reward, done, info = env.step(numpy.array([0.1, 0]))
+            observation, reward, done, info = env.step(numpy.array([0.01, 0]))
             infer_done = DoneReason.INFERENCE_DONE == info.get("DoneReason", "")
             if done and not infer_done:
                 obs = env.reset()
