@@ -26,13 +26,13 @@ then
     docker push $dimage
 
 else
-    python -c "import os;print(os.listdir('/workspace'))"
-    python -c "import os;print(os.listdir('/workspace/results'))"
-    python -c "import os;print(os.listdir('/workspace/results/model_10086'))"
+    python -c "import os;print(os.listdir('/myspace'))"
+    python -c "import os;print(os.listdir('/myspace/results'))"
+    python -c "import os;print(os.listdir('/myspace/results/model_10086'))"
     python -m train.main
 
-    python -c "import os;print(os.listdir('/workspace'))"
-    python -c "import os;print(os.listdir('/workspace/results'))"
-    python -c "import os;print(os.listdir('/workspace/results/model_10086'))"
+    python -c "import os;print(os.listdir('/myspace'))"
+    python -c "import os;print(os.listdir('/myspace/results'))"
+    python -c "import os;print(os.listdir('/myspace/results/model_10086'))"
     python -m inference.inference_demo
 fi

@@ -70,7 +70,9 @@ class MulProPPO:
         return True
 
     def _make_dir(self):
-        current_dir = os.path.abspath(".")
+        # current_dir = os.path.abspath(".")
+        current_dir = "/myspace"
+
         self.exp_dir = current_dir + "/results/exp_{}/".format("10086") # time.time()
         self.model_dir = current_dir + "/results/model_{}/".format("10086") # time.time()
         try:
