@@ -42,7 +42,7 @@ class PolicyParam:
 
     reload = False
 
-    model_path: str = "/myspace/results/model_10086/network_20.pth" # None
+    model_path: str = "/myspace/results/model_10086/network_190.pth" # None
     obs_type: str = "vec"
     img_width: int = 224
     img_length: int = 224
