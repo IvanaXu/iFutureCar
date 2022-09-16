@@ -71,8 +71,8 @@ class MulProPPO:
 
     def _make_dir(self):
         current_dir = os.path.abspath(".")
-        self.exp_dir = current_dir + "/results/exp_{}/".format(time.time())
-        self.model_dir = current_dir + "/results/model_{}/".format(time.time())
+        self.exp_dir = current_dir + "/results/exp_{}/".format("10086") # time.time()
+        self.model_dir = current_dir + "/results/model_{}/".format("10086") # time.time()
         try:
             os.makedirs(self.exp_dir)
             os.makedirs(self.model_dir)

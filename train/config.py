@@ -14,7 +14,7 @@ class PolicyParam:
     seed: int = 1234
 
     num_workers: int = 10
-    num_episode: int = 100000
+    num_episode: int = 5 # 100000
     batch_size: int = 4096
     minibatch_size: int = 256
     num_epoch: int = 10

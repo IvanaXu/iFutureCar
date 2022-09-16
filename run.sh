@@ -26,5 +26,12 @@ then
     docker push $dimage
 
 else
-    python /workspace/inference/inference_demo.py
+    python -c "import os;print(os.listdir('/workspace'))"
+    python -c "import os;print(os.listdir('/workspace/results'))"
+    python -c "import os;print(os.listdir('/workspace/results/model_10086'))"
+    python -m train.main
+    python -m inference.inference_demo
+    python -c "import os;print(os.listdir('/workspace'))"
+    python -c "import os;print(os.listdir('/workspace/results'))"
+    python -c "import os;print(os.listdir('/workspace/results/model_10086'))"
 fi
