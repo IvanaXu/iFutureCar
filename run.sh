@@ -3,6 +3,12 @@ if [ "$1" = "train" ];
 then
     echo "train"
     python -m train.main
+
+elif [ "$1" = "test" ]
+then
+    echo "test"
+    python -m inference.inference_demo
+
 elif [ "$1" = "rcmd" ]
 then
     echo "rcmd"
@@ -18,10 +24,7 @@ then
     dimage=registry.cn-shanghai.aliyuncs.com/tianchi_ivanxu/test-car:v1.0
     docker commit matrix_demo $dimage
     docker push $dimage
-elif [ "$1" = "test" ]
-then
-    echo "test"
-    python -m inference.inference_demo
+
 else
     python /workspace/inference/inference_demo.py
 fi
