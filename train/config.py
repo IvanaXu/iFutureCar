@@ -14,8 +14,8 @@ class PolicyParam:
     seed: int = 1234
 
     num_workers: int = 10
-    num_episode: int = 200 * 8 # 100000
-    batch_size: int = 4096//2
+    num_episode: int = 100 # 100000
+    batch_size: int = 4096//2//2
     minibatch_size: int = 256
     num_epoch: int = 10
     save_num_episode: int = 10
@@ -42,7 +42,7 @@ class PolicyParam:
 
     reload = False
 
-    model_path: str = "/myspace/results/model_10086/network_190.pth" # None
+    model_path: str = "/myspace/results/model_10086/network_1590.pth" # None
     obs_type: str = "vec"
     img_width: int = 224
     img_length: int = 224
